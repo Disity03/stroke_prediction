@@ -21,7 +21,8 @@ class LogisticRegression:
 		n_samples, n_features = X.shape
 		self.weights = np.zeros(n_features)
 		self.bias = 0
-
+		
+		s=f"Hyperparameters: Learning rate = {self.learning_rate}, Number of iterations = {self.n_iterations}, Lambda = {self.lambda_} \n"
 		for i in range(self.n_iterations):
 			linear_model = np.dot(X, self.weights) + self.bias
 			y_predicted = self.sigmoid(linear_model)
@@ -34,9 +35,12 @@ class LogisticRegression:
 			self.weights -= self.learning_rate * np.array(dw, dtype=float)
 			self.bias -= self.learning_rate * db
 			
+			
 			if i% math.ceil(self.n_iterations/self.printnum) == 0 or i == (self.n_iterations-1):
 				weights_str = np.array2string(self.weights, precision=4, suppress_small=True, separator=', ')
+				s+=f"Iteration {i:4d} | Bias: {self.bias: .4f} | Weights: {weights_str}\n"
 				print(f"Iteration {i:4d} | Bias: {self.bias: .4f} | Weights: {weights_str}")
+		return s
 
 	def predict_proba(self, X):
 		linear_model = np.dot(X, self.weights) + self.bias
