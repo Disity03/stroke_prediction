@@ -2,6 +2,7 @@ import pandas as pd
 from logreg import LogisticRegression
 import joblib
 
+# Choosing a model (Using pre-learned one or trying on new one)
 while True:
 	choice = input("Do you want to use pre-learned model or new one? (Old/New): ")
 	if choice.lower() == "old":
@@ -12,10 +13,14 @@ while True:
 		break
 	else:
 		print("Wrong input!")
-		
+
+
+# Importing model and scaler
 model = joblib.load("../models/stroke_model_save.pkl")
 scaler = joblib.load("../models/stroke_scaler.pkl")
 
+
+# Entering data
 print("Enter new patient information:")
 
 age = float(input("Age: "))
@@ -74,7 +79,7 @@ while True:
 		print("Wrong input!")	
 		
 
-
+# Formating data
 raw_input = {
     "age": [age],
     "hypertension": [1 if hypertension.lower() == "yes" else 0],
@@ -100,5 +105,6 @@ input_df[["age", "avg_glucose_level", "bmi"]] = scaler.transform(
 )
 
 
+# Predicting
 prob = model.predict_proba(input_df.to_numpy(dtype=float))[0] * 100
 print(f"Predicted stroke probability: {prob:.4f}%")

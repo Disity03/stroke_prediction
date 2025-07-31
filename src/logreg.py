@@ -2,18 +2,21 @@ import numpy as np
 import math
 
 class LogisticRegression:
-	def __init__(self, learning_rate=0.01, n_iterations=1000, lambda_ = 0.1, printnum = 10):
+	# Class constructor
+	def __init__(self, learning_rate=0.01, n_iterations=1000, lambda_ = 0.1, printnum = 10): 
 		self.learning_rate = learning_rate
 		self.n_iterations = n_iterations
 		self.lambda_ = lambda_
 		self.weights = None
 		self.bias = None
 		self.printnum = printnum
-			
-	def sigmoid(self, z):
+	
+	# Sigmoid function
+	def sigmoid(self, z): 
 		z = np.array(z, dtype=float)
 		return 1 / (1 + np.exp(-z))
 
+	# Fitting a model
 	def fit(self, X, y):
 		X = np.array(X)
 		y = np.array(y)
@@ -42,14 +45,14 @@ class LogisticRegression:
 				print(f"Iteration {i:4d} | Bias: {self.bias: .4f} | Weights: {weights_str}")
 		return s
 
+	# Predicting probability
 	def predict_proba(self, X):
 		linear_model = np.dot(X, self.weights) + self.bias
 		return self.sigmoid(linear_model)
 
+	# Predicting output
 	def predict(self, X):
 		proba = self.predict_proba(X)
 		return [1 if p >= 0.8 else 0 for p in proba]
 	
-	def param(self):
-		return self.weights, self.bias
 
