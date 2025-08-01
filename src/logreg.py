@@ -53,6 +53,6 @@ class LogisticRegression:
 	# Predicting output
 	def predict(self, X):
 		proba = self.predict_proba(X)
-		return [1 if p >= 0.8 else 0 for p in proba]
+		return [1 if p >= 0.90 else 0 for p in proba]
 	
 
