@@ -24,7 +24,7 @@ X_resampled, y_resampled = sm.fit_resample(X_train, y_train)
 
 
 # Training of a model
-model = LogisticRegression(learning_rate=0.05, n_iterations=100000, lambda_ = 0.1, printnum = 10)
+model = LogisticRegression(learning_rate=0.04, n_iterations=500000, lambda_ = 0.1, printnum = 50)
 iter_report = model.fit(X_resampled, y_resampled)
 
 
