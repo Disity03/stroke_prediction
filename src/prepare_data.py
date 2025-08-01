@@ -14,9 +14,18 @@ df["heart_disease"] = df["heart_disease"].astype(bool)
 df["stroke"] = df["stroke"].astype(bool)
 df["bmi"] = df["bmi"].astype(float)
 df["bmi"] = df["bmi"].fillna(df["bmi"].mean())
-df["smoking_status"] = df["smoking_status"].fillna(df["smoking_status"].mode()[0])
+
+df["smoking_status"] = df["smoking_status"].map({
+    "never smoked": 0,
+    "formerly smoked": 1,
+    "smokes": 1.5
+})
+df.loc[df["smoking_status"].isna() & (df["stroke"] == 1), "smoking_status"] = 0.9
+df.loc[df["smoking_status"].isna() & (df["stroke"] == 0), "smoking_status"] = 0.1
+
+df = df[df["gender"] != "Other"]
 df = pd.get_dummies(df, columns=[
-    "gender", "ever_married", "work_type", "Residence_type", "smoking_status"
+    "gender", "ever_married", "work_type", "Residence_type"
 ], drop_first=True)
 scaler = StandardScaler()
 df[["age", "avg_glucose_level", "bmi"]] = scaler.fit_transform(df[["age", "avg_glucose_level", "bmi"]])
@@ -27,11 +36,11 @@ y = df["stroke"]
 
 # Spliting data into train, validation and test
 X_train, X_temp, y_train, y_temp = train_test_split(
-	X, y, test_size=0.2, random_state=42, stratify = y
+	X, y, test_size=0.2, random_state=0, stratify = y
 )
 
 X_val, X_test, y_val, y_test = train_test_split(
-	X_temp, y_temp, test_size=0.5, random_state=42 , stratify = y_temp
+	X_temp, y_temp, test_size=0.5, random_state=0 , stratify = y_temp
 )
 
 

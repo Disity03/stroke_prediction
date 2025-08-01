@@ -44,8 +44,8 @@ avg_glucose = float(input("Average glucose level: "))
 bmi = float(input("BMI: "))
 
 while True:
-	gender = input("Gender (Male/Female/Other): ").strip()
-	if gender.lower() == "male" or gender.lower() == "female" or gender.lower() == "other":
+	gender = input("Gender (Male/Female): ").strip()
+	if gender.lower() == "male" or gender.lower() == "female":
 		break
 	else:
 		print("Wrong input!")	
@@ -86,16 +86,18 @@ raw_input = {
     "heart_disease": [1 if heart_disease.lower() == "yes" else 0],
     "avg_glucose_level": [avg_glucose],
     "bmi": [bmi],
+    "smoking_status": [
+    	1.5 if smoking.lower() == "smokes" 
+    	else 1 if smoking.lower() == "formerly smoked" 
+    	else 0
+    	],
     "gender_Male": [1 if gender.lower() == "male" else 0],
-    "gender_Other": [1 if gender.lower() == "other" else 0],
     "ever_married_Yes": [1 if married.lower() == "yes" else 0],
     "work_type_Never_worked": [1 if work_type.lower() == "never_worked" else 0],
     "work_type_Private": [1 if work_type.lower() == "private" else 0],
     "work_type_Self-employed": [1 if work_type.lower() == "self-employed" else 0],
     "work_type_children": [1 if work_type.lower() == "children" else 0],
     "Residence_type_Urban": [1 if residence.lower() == "urban" else 0],
-    "smoking_status_never smoked": [1 if smoking.lower() == "never smoked" else 0],
-    "smoking_status_smokes": [1 if smoking.lower() == "smokes" else 0]
 }
 
 input_df = pd.DataFrame(raw_input)
@@ -107,4 +109,4 @@ input_df[["age", "avg_glucose_level", "bmi"]] = scaler.transform(
 
 # Predicting
 prob = model.predict_proba(input_df.to_numpy(dtype=float))[0] * 100
-print(f"Predicted stroke probability: {prob:.4f}%")
+print(f"Predicted danger of stroke: {prob:.4f}%")
