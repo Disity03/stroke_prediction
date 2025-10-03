@@ -1,16 +1,16 @@
-# Stroke Risk Prediction using Machine Learning
+# Predikcija rizika od moždanog udara pomoću mašinskog učenja
 
-This project builds a machine learning model to predict the likelihood of a brain stroke based on various health and lifestyle parameters. It aims to assist in early detection and prevention by analyzing key risk factors such as age, hypertension, heart disease, BMI, smoking status, and more.
+Ovaj projekat gradi model mašinskog učenja za predviđanje verovatnoće moždanog udara na osnovu različitih zdravstvenih i životnih parametara. Cilj mu je da pomogne u ranom otkrivanju i prevenciji analizom ključnih faktora rizika kao što su starost, hipertenzija, srčane bolesti, BMI, status pušenja i drugi.
 
-## Requirements
+## Zahtevi
 
-Install dependencies:
+Instalacija zavisnosti:
 
 ```bash
 pip install pandas numpy scikit-learn imbalanced-learn
 ```
 
-If using a virtual environment:
+Ako koristite virtuelno okruženje:
 
 ```bash
 python3 -m venv ml-env
@@ -18,54 +18,54 @@ source ml-env/bin/activate
 pip install -r requirements.txt
 ```
 
-## How to Train
+## Kako trenirati
 
-From the root directory:
+Iz **root** direktorijuma:
 
-  - Prepare data:
+- Pripremite podatke:
   
   ```bash
   python3 src/prepare_data.py
   ```
 
-  - Train and Validate Model:
+- Trenira i validira model:
   
   ```bash
   python3 src/train_and_validate_model.py
   ```
 
-  - Test Model:
+- Testira model:
   
   ```bash
   python3 src/test_model.py
   ```
 
-This will:
-- Preprocess and split the data
-- Train your custom logistic regression
-- Save the model weights, bias, and scaler
-- Test your model
+Ovo će:
+- Predobraditi i podeliti podatke
+- Trenirati prilagođenu logističku regresiju
+- Sačuvati težine modela, bias i scaler
+- Testirati vaš model
 
-## Make a Prediction
+## Pravljenje predikcije
 
-To predict the probability of stroke for a new patient from terminal input:
+Da biste predvideli verovatnoću moždanog udara za novog pacijenta iz terminala:
 
 ```bash
 python3 src/stroke_predictor.py
 ```
 
-You'll be prompted to enter values for:
-- Age, Hypertension, Heart disease, Glucose, BMI
-- Gender, Marital status, Work type, Residence, Smoking status
+Od vas će biti zatraženo da unesete vrednosti za:
+- Godine, hipertenziju, srčane bolesti, glukozu, BMI
+- Pol, bračni status, tip posla, mesto stanovanja, status pušenja
 
-## Dataset
+## Skup podataka
 
-Source: [Kaggle Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
-- 5,110 patient records
-- Features include age, hypertension, heart disease, BMI, glucose, work type, etc.
-- Highly imbalanced (fewer stroke-positive samples)
+Izvor: [Kaggle Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)  
+- 5.110 zapisa o pacijentima  
+- Karakteristike uključuju starost, hipertenziju, srčane bolesti, BMI, glukozu, tip posla itd.  
+- Veoma neuravnotežen (malo uzoraka sa pozitivnim moždanim udarom)
 
-## Notes
+## Napomene
 
-- The threshold is set to 0.9 because negative examples are much more likely to have high predicted probabilities than positive examples are to have low ones
-- In this dataset there was one example where gender was "Other", it was removed to improve training performance
+- Prag je podešen na 0.9 jer je mnogo verovatnije da negativni primeri imaju visoke predviđene verovatnoće nego da pozitivni primeri imaju niske  
+- U ovom skupu podataka postojao je jedan primer gde je pol bio „Other“, koji je uklonjen da bi se poboljšale performanse treninga  
