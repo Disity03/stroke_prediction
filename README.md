@@ -72,7 +72,20 @@ Izvor: [Kaggle Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedeso
 
 ## Poredjenja
 
-Na sajtu [Kaggle Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) postoje i rešenja drugih, pa su ovde prikazana poređenja:
+Na sajtu [Kaggle Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) postoje i rešenja drugih, gde su uglavnom postavljali prag odlučivanja na 0.5 (default), pa ću ovde dati i moje rezultate sa tim pragom, poredjenja radi:
+
+```bash
+Accuracy: 77.1037%
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.77      0.87       486
+        True       0.14      0.72      0.24        25
+
+    accuracy                           0.77       511
+   macro avg       0.56      0.75      0.55       511
+weighted avg       0.94      0.77      0.83       511
+```
 
 - [Marwan ElMahalawy](https://www.kaggle.com/code/marwanelmahalawy/stroke-logistic-regression)
 
@@ -91,19 +104,38 @@ Accuracy: 74.8472%
 weighted avg       0.94      0.75      0.82       982
 ```
 
-Iako nije navedeno, pretpostavka je da je ovde prag podešen na 0.5, pa ću predstaviti i moje rezutate sa istim pragom, poređenja radi:
+- [Josh](https://www.kaggle.com/code/joshuaswords/predicting-a-stroke-shap-lime-explainer-eli5#What-about-Logistic-Regression?)
+
+Ovo je najbolje ocenjeno rešenje na Kaggle-u, [Josh](https://www.kaggle.com/code/joshuaswords/predicting-a-stroke-shap-lime-explainer-eli5) je koristio i druge tehnike, ali ću je poređenja radi uzeti logističku regresiju:
 
 ```bash
-Accuracy: 77.1037%
-
+Accuracy: 75.8177%
               precision    recall  f1-score   support
 
-       False       0.98      0.77      0.87       486
-        True       0.14      0.72      0.24        25
+           0       0.97      0.77      0.86      3404
+           1       0.11      0.60      0.19       173
 
-    accuracy                           0.77       511
-   macro avg       0.56      0.75      0.55       511
-weighted avg       0.94      0.77      0.83       511
+    accuracy                           0.76      3577
+   macro avg       0.54      0.68      0.53      3577
+weighted avg       0.93      0.76      0.83      3577
 ```
 
-Rezultati su veoma slični, ali prag odlučivanja u ovom slučaju nije realan po mom mišljenju.
+On je na kraju zaključio da mu se najbolje pokazala logistička regresija, a testirao je i Random Forrest i Support Vector Machine.
+
+- [Nima Pourmoradi](https://www.kaggle.com/code/nimapourmoradi/healthcare-stroke)
+
+```bash
+Accuracy: 69.8531%
+              precision    recall  f1-score   support
+
+           0       0.99      0.59      0.74      1179
+           1       0.08      0.84      0.14        49
+
+    accuracy                           0.60      1228
+   macro avg       0.53      0.71      0.44      1228
+weighted avg       0.95      0.60      0.71      1228
+```
+
+## Zaključak
+
+Iako rezultati nisu baš najbolji, ispostavlja se da je logistička regresija jedan od najboljih modela za rešavanje ovog problema. Takođe rezultati zavise od toga šta mi smatramo da je dovoljna verovatnoća da se desi moždani udar. Sve u svemu, ukoliko ovaj problem ne gledamo kao problem nula i jedinica, deluje da se pomoću logističke regresije može dati dovoljno dobra procena opasnosti od moždanog udara, a do lekara je da proceni kako da postupa sa tim rezultatom.
