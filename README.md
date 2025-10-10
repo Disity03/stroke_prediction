@@ -70,9 +70,9 @@ Izvor: [Kaggle Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedeso
 - Prag je podešen na 0.97 jer je mnogo verovatnije da negativni primeri imaju visoke predviđene verovatnoće nego da pozitivni primeri imaju niske  
 - U ovom skupu podataka postojao je jedan primer gde je pol bio „Other“, koji je uklonjen da bi se poboljšale performanse treninga  
 
-## Poredjenja
+## Poređenja
 
-Na sajtu [Kaggle Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) postoje i rešenja drugih, gde su uglavnom postavljali prag odlučivanja na 0.5 (default), pa ću ovde dati i moje rezultate sa tim pragom, poredjenja radi:
+Na sajtu [Kaggle Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) postoje i rešenja drugih, gde su uglavnom postavljali prag odlučivanja na 0.5 (default), pa ću ovde dati i moje rezultate sa tim pragom, poređenja radi:
 
 ```bash
 Accuracy: 77.1037%
