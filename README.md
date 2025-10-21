@@ -135,6 +135,152 @@ Accuracy: 69.8531%
    macro avg       0.53      0.71      0.44      1228
 weighted avg       0.95      0.60      0.71      1228
 ```
+## Ablacija
+
+U mašinskom učenju, ablacija označava eksperiment u kojem se namerno uklanja ili menja deo modela ili ulaznih podataka da bi se proverilo koliko taj deo doprinosi ukupnim performansama.
+
+Test modela treniranog bez kolone **"Godine"**:
+```bash
+Accuracy: 69.2759%
+              precision    recall  f1-score   support
+
+       False       0.97      0.70      0.81       486
+        True       0.10      0.64      0.17        25
+
+    accuracy                           0.69       511
+   macro avg       0.54      0.67      0.49       511
+weighted avg       0.93      0.69      0.78       511
+```
+
+Test modela treniranog bez kolone **"Pol"**:
+```bash
+Accuracy: 74.7554%
+              precision    recall  f1-score   support
+
+       False       0.98      0.75      0.85       486
+        True       0.12      0.64      0.20        25
+
+    accuracy                           0.75       511
+   macro avg       0.55      0.70      0.52       511
+weighted avg       0.93      0.75      0.82       511
+```
+
+Test modela treniranog bez kolone **"Hipertenzija"**:
+```bash
+Accuracy: 73.7769%
+              precision    recall  f1-score   support
+
+       False       0.97      0.75      0.84       486
+        True       0.10      0.56      0.17        25
+
+    accuracy                           0.74       511
+   macro avg       0.54      0.65      0.51       511
+weighted avg       0.93      0.74      0.81       511
+```
+
+Test modela treniranog bez kolone **"Srčane bolesti"**:
+```bash
+Accuracy: 73.3855%
+              precision    recall  f1-score   support
+
+       False       0.97      0.74      0.84       486
+        True       0.11      0.60      0.18        25
+
+    accuracy                           0.73       511
+   macro avg       0.54      0.67      0.51       511
+weighted avg       0.93      0.73      0.81       511
+```
+
+Test modela treniranog bez kolone **"Bračni status"**:
+```bash
+Accuracy: 74.3640%
+              precision    recall  f1-score   support
+
+       False       0.97      0.75      0.85       486
+        True       0.11      0.60      0.19        25
+
+    accuracy                           0.74       511
+   macro avg       0.54      0.68      0.52       511
+weighted avg       0.93      0.74      0.82       511
+```
+
+Test modela treniranog bez kolone **"Tip posla"**:
+```bash
+Accuracy: 72.9941%
+              precision    recall  f1-score   support
+
+       False       0.98      0.73      0.84       486
+        True       0.13      0.76      0.22        25
+
+    accuracy                           0.73       511
+   macro avg       0.55      0.74      0.53       511
+weighted avg       0.94      0.73      0.81       511
+```
+
+Test modela treniranog bez kolone **"Mesto stanovanja"**:
+```bash
+Accuracy: 75.3425%
+              precision    recall  f1-score   support
+
+       False       0.98      0.76      0.85       486
+        True       0.12      0.64      0.20        25
+
+    accuracy                           0.75       511
+   macro avg       0.55      0.70      0.53       511
+weighted avg       0.93      0.75      0.82       511
+```
+
+Test modela treniranog bez kolone **"Prosečni nivo glukoze"**:
+```bash
+Accuracy: 73.9726%
+              precision    recall  f1-score   support
+
+       False       0.97      0.75      0.85       486
+        True       0.11      0.60      0.18        25
+
+    accuracy                           0.74       511
+   macro avg       0.54      0.67      0.51       511
+weighted avg       0.93      0.74      0.81       511
+```
+
+Test modela treniranog bez kolone **"BMI"**:
+```bash
+Accuracy: 74.5597%
+              precision    recall  f1-score   support
+
+       False       0.97      0.75      0.85       486
+        True       0.11      0.60      0.19        25
+
+    accuracy                           0.75       511
+   macro avg       0.54      0.68      0.52       511
+weighted avg       0.93      0.75      0.82       511
+```
+Test modela treniranog bez kolone **"Status pušenja"**:
+```bash
+Accuracy: 73.9726%
+              precision    recall  f1-score   support
+
+       False       0.97      0.75      0.85       486
+        True       0.10      0.56      0.17        25
+
+    accuracy                           0.74       511
+   macro avg       0.54      0.65      0.51       511
+weighted avg       0.93      0.74      0.81       511
+```
+
+Ukoliko računamo da manja preciznost važi da je veći uticaj na model, parametre možemo rangirati od najvažijeg do najmanje važnog na sledeći način:
+| - | Parametar | Preciznost |
+|---|-----------|---------|
+| 1 | Godine | 69.2759% |
+| 2 | Tip posla | 72.9941% |
+| 3 | Srčane bolesti | 73.3855% |
+| 4 | Hipertenzija | 73.7769% |
+| 5 | Status pušenja | 73.9726% |
+| 6 | Prosečni nivo glukoze | 73.9726% |
+| 7 | Bračni status | 74.3640% |
+| 8 | BMI | 74.5597% |
+| 9 | Pol | 74.7554% |
+| 10 | Mesto stanovanja | 75.3425% |
 
 ## Zaključak
 
