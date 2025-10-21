@@ -139,7 +139,7 @@ weighted avg       0.95      0.60      0.71      1228
 
 U mašinskom učenju, ablacija označava eksperiment u kojem se namerno uklanja ili menja deo modela ili ulaznih podataka da bi se proverilo koliko taj deo doprinosi ukupnim performansama.
 
-Test modela treniranog bez kolone **"Godine"**:
+Test modela treniranog bez parametra **"Godine"**:
 ```bash
 Accuracy: 69.2759%
               precision    recall  f1-score   support
@@ -152,7 +152,7 @@ Accuracy: 69.2759%
 weighted avg       0.93      0.69      0.78       511
 ```
 
-Test modela treniranog bez kolone **"Pol"**:
+Test modela treniranog bez parametra **"Pol"**:
 ```bash
 Accuracy: 74.7554%
               precision    recall  f1-score   support
@@ -165,7 +165,7 @@ Accuracy: 74.7554%
 weighted avg       0.93      0.75      0.82       511
 ```
 
-Test modela treniranog bez kolone **"Hipertenzija"**:
+Test modela treniranog bez parametra **"Hipertenzija"**:
 ```bash
 Accuracy: 73.7769%
               precision    recall  f1-score   support
@@ -178,7 +178,7 @@ Accuracy: 73.7769%
 weighted avg       0.93      0.74      0.81       511
 ```
 
-Test modela treniranog bez kolone **"Srčane bolesti"**:
+Test modela treniranog bez parametra **"Srčane bolesti"**:
 ```bash
 Accuracy: 73.3855%
               precision    recall  f1-score   support
@@ -191,7 +191,7 @@ Accuracy: 73.3855%
 weighted avg       0.93      0.73      0.81       511
 ```
 
-Test modela treniranog bez kolone **"Bračni status"**:
+Test modela treniranog bez parametra **"Bračni status"**:
 ```bash
 Accuracy: 74.3640%
               precision    recall  f1-score   support
@@ -204,7 +204,7 @@ Accuracy: 74.3640%
 weighted avg       0.93      0.74      0.82       511
 ```
 
-Test modela treniranog bez kolone **"Tip posla"**:
+Test modela treniranog bez parametra **"Tip posla"**:
 ```bash
 Accuracy: 72.9941%
               precision    recall  f1-score   support
@@ -217,7 +217,7 @@ Accuracy: 72.9941%
 weighted avg       0.94      0.73      0.81       511
 ```
 
-Test modela treniranog bez kolone **"Mesto stanovanja"**:
+Test modela treniranog bez parametra **"Mesto stanovanja"**:
 ```bash
 Accuracy: 75.3425%
               precision    recall  f1-score   support
@@ -230,7 +230,7 @@ Accuracy: 75.3425%
 weighted avg       0.93      0.75      0.82       511
 ```
 
-Test modela treniranog bez kolone **"Prosečni nivo glukoze"**:
+Test modela treniranog bez parametra **"Prosečni nivo glukoze"**:
 ```bash
 Accuracy: 73.9726%
               precision    recall  f1-score   support
@@ -243,7 +243,7 @@ Accuracy: 73.9726%
 weighted avg       0.93      0.74      0.81       511
 ```
 
-Test modela treniranog bez kolone **"BMI"**:
+Test modela treniranog bez parametra **"BMI"**:
 ```bash
 Accuracy: 74.5597%
               precision    recall  f1-score   support
@@ -255,7 +255,7 @@ Accuracy: 74.5597%
    macro avg       0.54      0.68      0.52       511
 weighted avg       0.93      0.75      0.82       511
 ```
-Test modela treniranog bez kolone **"Status pušenja"**:
+Test modela treniranog bez parametra **"Status pušenja"**:
 ```bash
 Accuracy: 73.9726%
               precision    recall  f1-score   support
