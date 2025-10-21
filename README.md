@@ -1,4 +1,4 @@
-# Predikcija rizika od moždanog udara pomoću mašinskog učenja
+# Predviđanje rizika od moždanog udara pomoću mašinskog učenja
 
 Ovaj projekat gradi model mašinskog učenja za predviđanje verovatnoće moždanog udara na osnovu različitih zdravstvenih i životnih parametara. Cilj mu je da pomogne u ranom otkrivanju i prevenciji analizom ključnih faktora rizika kao što su starost, hipertenzija, srčane bolesti, BMI, status pušenja i drugi.
 
